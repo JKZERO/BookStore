@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -12,7 +13,11 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Microsoft Yahei'
-}
+  html{
+    background-color: #F0F0F0;
+  }
+  #app {
+    font-family: PingFangSC-regular,'Microsoft Yahei';
+    min-height: 6.67rem;
+  }
 </style>
