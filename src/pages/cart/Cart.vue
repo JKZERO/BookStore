@@ -32,6 +32,7 @@
       }
     },
     mounted() {
+      console.log(this.$store)
       let datas={       //传入的商品属性
         title: '好东西',
         img: 'https://cn.vuejs.org/images/logo.png',

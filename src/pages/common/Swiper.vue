@@ -35,6 +35,8 @@ export default{
     text-align: center;
   }
   .swiper-img{
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
   }
 </style>

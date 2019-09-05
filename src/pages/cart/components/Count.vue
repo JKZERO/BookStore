@@ -19,7 +19,7 @@
     computed: {
       ...mapGetters(['allMoney','carCount']),
       allSelsect () {
-        return this.$store.state.all_selsect
+        return this.$store.state.app.all_selsect
       }
     },
     methods: {

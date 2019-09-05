@@ -18,8 +18,9 @@
 
 <script>
   import {mapGetters,mapActions } from 'vuex'
+
   export default {
-    name: "ClassifyCartCard",
+    name: "CartCard",
     methods: {
       ...mapActions(['addNum','jianNum','select'])
     },

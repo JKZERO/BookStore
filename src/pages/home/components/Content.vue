@@ -36,13 +36,18 @@
   .box{
     float: left;
     width: 48%;
+    height: 2.54rem;
     margin: 1%;
     background-color: #ffffff;
     text-align: center;
+
   }
   .box img{
     margin: .13rem;
     width: 80%;
+    max-width: 80%;
+    height: 56%;
+    vertical-align: middle;
   }
   .box p{
     margin: .06rem .13rem;
