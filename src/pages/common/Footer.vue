@@ -1,10 +1,12 @@
 <template>
     <div class="footer">
       <ul>
-        <li @click="change(index)" :class="index==on?'on':''" :key="index" v-for="(item,index) in list">
-          <div :class="['iconfont '+item.class]"></div>
-          <div >{{item.content}}</div>
-        </li>
+          <router-link tag="li" :to="item.to"
+                       :class="{on:index==activeindex}"
+                       :key="index" v-for="(item,index) in list">
+              <div :class="['iconfont '+item.class]"></div>
+              <div >{{item.content}}</div>
+          </router-link>
       </ul>
     </div>
 </template>
@@ -12,34 +14,39 @@
 <script>
     export default {
       name: "HomeFooter",
-      props: {
-        on: Number
-      },
       data (){
         return {
           list: [
             {
               class: 'icon-1',
-              content: '首页'
+              content: '首页',
+              to: '/'
             },
             {
               class: 'icon-17',
-              content: '分类'
+              content: '分类',
+              to: '/Classify'
             },
             {
               class: 'icon-icon1460345236602',
-              content: '购物车'
+              content: '购物车',
+              to: '/Cart'
             },
             {
               class: 'icon-icon1460345725196',
-              content: '我的'
+              content: '我的',
+              to: '/My'
             }
           ]
         }
       },
       methods: {
-        change (index) {
-          this.$emit('change',index)
+      },
+      computed: {
+        activeindex (value) {
+          return this.list.findIndex((item,index) => {
+            return item.to===this.$route.fullPath
+          })
         }
       }
     }
@@ -47,6 +54,7 @@
 
 <style scoped>
   .footer{
+    color: #000000;
     width: 100%;
     background-color: #ffffff;
     font-size: 14px;

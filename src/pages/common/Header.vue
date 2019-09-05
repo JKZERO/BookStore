@@ -23,13 +23,17 @@
 
 <style scoped>
   .headed{
+    z-index: 1;
     background-color: #ffffff;
     font-size: .14rem;
     line-height: .44rem;
     text-align: center;
     height: .44rem;
-    position: relative;
     font-size: 18px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
   }
   .icon-jiantou-copy{
     position: absolute;

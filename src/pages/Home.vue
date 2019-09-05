@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
-    <home-footer @change="change" :on="on"></home-footer>
+    <home-footer  :on="on"></home-footer>
   </div>
 </template>
 

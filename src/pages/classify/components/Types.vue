@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li :class="index == 0 ?  'type active' :  'type'" v-for="(item,index) in list" :key="index">{{item}}</li>
+      <li :class="index == 0 ?  'type active' :  'type'" v-for="(item,index) in list" :key="index">{{item.type}}</li>
     </ul>
   </div>
 </template>

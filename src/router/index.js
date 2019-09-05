@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/Home'
-import Main from '@/pages/home/Main'
-import Classify from '@/pages/classify/Classify'
-import Cart from '@/pages/cart/Cart'
-import My from '@/pages/my/My'
-
 Vue.use(Router)
+
+const Home = r => require.ensure([], () => r(require('@/pages/Home')), 'Home');
+const Main = r => require.ensure([], () => r(require('@/pages/home/Main')), 'Main');
+const Classify = r => require.ensure([], () => r(require('@/pages/classify/Classify')), 'Classify');
+const Cart = r => require.ensure([], () => r(require('@/pages/cart/Cart')), 'Cart');
+const My = r => require.ensure([], () => r(require('@/pages/my/My')), 'My');
 
 export default new Router({
   routes: [
@@ -17,7 +17,11 @@ export default new Router({
         {
           path: '/',
           name: 'Main',
-          component: Main
+          component: Main,
+          meta: {
+            keepAlive: true,
+            title: '首页'
+          }
         },
         {
           path: '/Classify',

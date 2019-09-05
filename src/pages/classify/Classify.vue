@@ -2,7 +2,7 @@
     <div>
       <classify-header :hasback="true">全部分类</classify-header>
       <div class="mainbody">
-        <classify-types :list="typeList" class="classifymenu"></classify-types>
+        <classify-types :list="allList" class="classifymenu"></classify-types>
         <classify-content :list="allList" class="classifycontent"></classify-content>
       </div>
     </div>
@@ -21,9 +21,6 @@
     },
     data () {
       return {
-        typeList: [
-          "文学","dsads","dasdasdas","dsad"
-        ],
         allList: [
           {
             type: '小说',
@@ -59,7 +56,77 @@
                 older: '￥1599'
               }
             ]
-          }
+          },
+          {
+            type: '文学',
+            shoplist: [
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              }
+            ]
+          },
+          {
+            type: '漫画',
+            shoplist: [
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              },
+              {
+                url: 'https://cn.vuejs.org/images/logo.png',
+                msg: '智慧启蒙勇气成长系列：铃木绘本蒲公英（亲子共读……',
+                now: '￥1299',
+                older: '￥1599'
+              }
+            ]
+          },
         ]
       }
     }
@@ -71,6 +138,7 @@
     font-family: PingFangSC-regular;
     padding-bottom: .49rem;
     overflow: hidden;
+    padding-top: .44rem;
   }
   .classifymenu{
     float: left;

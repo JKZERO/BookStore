@@ -1,25 +1,29 @@
 <template>
     <div class="count">
-      <span class="iconfont icon-xianshi_xuanzetianchong"></span>
+      <span @click="selectAll()" :class="
+      allSelsect?'iconfont icon-xianshi_xuanzetianchong selected':'iconfont icon-xianshi_xuanzetianchong'"></span>
       <span class="allcheck">全选</span>
-      <span class="sum">合计:￥{{sum}}.00</span>
-      <span class="btn">去结算({{count}})</span>
+      <span class="sum">合计:￥{{allMoney}}.00</span>
+      <span class="btn">去结算({{carCount}})</span>
     </div>
 </template>
 
 <script>
+  import {mapGetters,mapActions } from 'vuex'
   export default {
     name: "CartCount",
-    props: {
-      count: Number,
-      sum: Number
-    },
     data () {
       return {
       }
     },
+    computed: {
+      ...mapGetters(['allMoney','carCount']),
+      allSelsect () {
+        return this.$store.state.all_selsect
+      }
+    },
     methods: {
-
+      ...mapActions(['selectAll'])
     }
   }
 </script>
@@ -56,5 +60,8 @@
     right: 0;
     bottom: 0;
     font-size: 14px;
+  }
+  .selected{
+    color: #E51C23;
   }
 </style>

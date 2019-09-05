@@ -1,24 +1,30 @@
 <template>
   <div>
-    <div class="card" v-for="(item,index) in list" :key="index">
-      <span class="iconfont icon-xianshi_xuanzetianchong"></span>
-      <img :src="item.url" />
-      <span class="msg">{{item.msg}}</span>
-      <span class="price">{{item.now|filterA}}</span>
+    <div class="card" v-for="(item,index) in carList" :key="index">
+      <span @click='select(item.productId)'
+            :class="item.selected ? 'iconfont icon-xianshi_xuanzetianchong selected' :
+       'iconfont icon-xianshi_xuanzetianchong'"></span>
+      <img :src="item.img" />
+      <span class="msg">{{item.title}}</span>
+      <span class="price">{{item.sellPrice|filterA}}</span>
       <div class="count">
-        <span class="plus">-</span>
-        <span class="now">0</span>
-        <span class="add">+</span>
+        <span :class="item.num==1?'plus stop':'plus'" @click='jianNum(item.productId)'>-</span>
+        <span class="now">{{item.num}}</span>
+        <span class="add"  @click='addNum(item.productId)'>+</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import {mapGetters,mapActions } from 'vuex'
   export default {
     name: "ClassifyCartCard",
-    props: {
-      list: Array
+    methods: {
+      ...mapActions(['addNum','jianNum','select'])
+    },
+    computed: {
+      ...mapGetters(['carList'])
     },
     filters:{
       filterA:function(value) {
@@ -78,9 +84,16 @@
   .add,.plus{
     width: 30%;
     font-size: 22px;
+    background-color: #ffffff;
   }
   .now{
     width: 40%;
     background-color: #cccccc;
+  }
+  .selected{
+    color: #E51C23;
+  }
+  .stop{
+    color: #cccccc;
   }
 </style>

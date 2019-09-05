@@ -12,7 +12,7 @@
 <script>
   import MainHeader from './components/Header.vue'
   import MainContent from './components/Content.vue'
-  import MainSwiper from './components/Swiper.vue'
+  import MainSwiper from '@/pages/common/Swiper.vue'
   export default {
     name: "Main",
     components: {
